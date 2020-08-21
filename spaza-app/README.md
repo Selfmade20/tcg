@@ -1,7 +1,9 @@
 # How to run the project 
 
-- clone the github repo
+- Clone the github repo
 
-- install the node_modules using npm install
+- Install the node_modules using npm install
 
 - Then run it locally using npm start
+
+- Prototype <img src="./demo.png" />
