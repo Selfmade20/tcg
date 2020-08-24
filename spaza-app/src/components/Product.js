@@ -1,6 +1,6 @@
 import React from "react";
 import "./Product.css";
-import { useStateValue} from '../redux/StateProvider'
+import { useStateValue } from "../redux/StateProvider";
 
 function Product({ id, title, image, price, rating }) {
   const [{ basket }, dipatch] = useStateValue();

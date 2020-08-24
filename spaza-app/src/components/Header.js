@@ -13,7 +13,7 @@ function Header() {
       <Link to="/">
         <img
           className="header__logo"
-          src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/18e50211-87df-48d9-92c7-c572d8c74708/dbyz0iv-3b45d618-230b-40f1-b804-15b8cb6532c9.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvMThlNTAyMTEtODdkZi00OGQ5LTkyYzctYzU3MmQ4Yzc0NzA4XC9kYnl6MGl2LTNiNDVkNjE4LTIzMGItNDBmMS1iODA0LTE1YjhjYjY1MzJjOS5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.7PCSCGwoy2cQmpTyYMkq2iG0tlr07Ac8KsLXCD-bx_M"
+          src="https://cdn.logojoy.com/wp-content/uploads/20200512150944/bioware-gaming-logo.png"
           alt=""
         />
       </Link>
@@ -24,7 +24,7 @@ function Header() {
       <div className="header__nav">
         <Link to="/login" className="header__link">
           <div className="header__option">
-            <span className="header__optionLineOne">Hello Tebogo</span>
+            <span className="header__optionLineOne">Hello, Sign in</span>
             <span className="header__optionLineTwo">Sign in</span>
           </div>
         </Link>

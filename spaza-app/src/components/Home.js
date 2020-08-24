@@ -58,6 +58,22 @@ function Home() {
           image="https://junkmailimages.blob.core.windows.net/large/4cfd864e0ccb492c956451f1dedd941d.jpg"
         />
       </div>
+      <div className="home__row">
+        <Product
+          id="7"
+          title="Ciroc Red Berry 750ml"
+          price={200}
+          rating={3}
+          image="https://cdn.shopify.com/s/files/1/2788/1238/products/Circo_Red_Berry_480x480.jpg?v=1542029472"
+        />
+        <Product
+          id="8"
+          title="Dolce and Gabbana Super King Sneakers"
+          price={916}
+          rating={5}
+          image="https://cdn-images.farfetch-contents.com/13/59/98/66/13599866_21590287_480.jpg"
+        />
+      </div>
     </div>
   );
 }
