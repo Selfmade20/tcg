@@ -16,15 +16,15 @@ function Login() {
            <h1>Sign in</h1>
            <form>
                <h5>E-mail</h5>
-               <input type="text" />
+               <input type="email" />
                <h5>Password</h5>
                <input type="password" />
-               <button>Sign in</button>
+               <button type="submit" className="login__signInButton ">Sign in</button>
            </form>
            <p>
            By signing-in, you agree to Tebogo's Conditions of Use and Privacy Notice.
            </p>
-           <button>Create Account</button>
+           <button className="login__registerbutton">Create Account</button>
       </div>
     </div>
   );
