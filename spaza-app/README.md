@@ -6,4 +6,4 @@
 
 - Then run it locally using npm start
 
-- Prototype <img src="./demo.png" />
+- <img src="./demo.png" />
