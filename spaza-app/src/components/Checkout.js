@@ -1,33 +1,38 @@
 import React from "react";
 import { useStateValue } from "../redux/StateProvider";
 import "./Checkout.css";
+import CheckoutProduct from "./CheckoutProduct";
 
 function Checkout() {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket }] = useStateValue();
 
   return (
     <div className="checkout">
+      <img
+        className="checkout__ad"
+        src="https://images-na.ssl-images-amazon.com/images/G/02/UK_CCMP/TM/OCC_Amazon1._CB423493668_.jpg"
+        alt=""
+      />
       {basket?.length === 0 ? (
         <div>
-          <h2> Your Shopping Basket is empty</h2>
+          <h2> Your Shopping Basket is empty</h2>   
           <p>
-            You have nos items in your basket. To buy one or more items, click
+            You have no items in your basket. To buy one or more items, click
             on "Add to basket" next to the item
           </p>
         </div>
       ) : (
         <div>
           <h2 className="checkout__title">Your Shopping Basket</h2>
-            {basket.map(item => (
-                <CheckoutProduct
-                 item={item.id}
-                 title={item.title}
-                 image={item.image}
-                 price={item.price}
-                 rating={item.rating}
-                 />
-
-            ))}
+          {basket?.map((item) => ( 
+            <CheckoutProduct
+              id={item.id}
+              title={item.title}
+              image={item.image}
+              price={item.price}
+              rating={item.rating}
+            />
+          ))}
         </div>
       )}
     </div>
