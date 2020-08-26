@@ -10,3 +10,15 @@
 # Homepage
 
 - <img src="./images/landingpage.png" />
+
+# Checkout
+
+- <img src="./images/checkout.png" />
+
+# Register 
+
+- <img src="./images/register.png" />
+
+# Sign in 
+
+<img src="./images/signin.png" />
