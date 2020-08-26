@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import Checkout from "./components/Checkout";
 import Login from "./components/Login";
+import Register from "./components/Register";
 
 function App() {
   return (
@@ -16,7 +17,10 @@ function App() {
             <Checkout />
           </Route>
           <Route path="/login">
-            <Login/>
+            <Login />
+          </Route>
+          <Route path="/register">
+          <Register />
           </Route>
           <Route path="/">
             <Header />
