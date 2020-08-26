@@ -15,7 +15,6 @@ function Login() {
   const submit = (event) => {
     event.preventDefault();
     dispatch(register(registerDetails));
-    window.location.reload();
   };
 
   const handleChange = (event) => {
