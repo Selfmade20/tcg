@@ -6,4 +6,7 @@
 
 - Then run it locally using npm start
 
-- <img src="./demo.png" />
+
+# Homepage
+
+- <img src="../images/langingpage.png" />
