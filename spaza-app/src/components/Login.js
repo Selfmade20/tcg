@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Login.css";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import jwtDecode from "jwt-decode";
 
 function Login() {
+  const [loginDetails, setLoginDetails] = useState({ email: "", password: "" });
+
+  const login = () => {};
+
   return (
     <div className="login">
       <Link to="/">
@@ -13,18 +19,46 @@ function Login() {
         />
       </Link>
       <div className="login__container">
-           <h1>Sign in</h1>
-           <form>
-               <h5>E-mail</h5>
-               <input type="email" />
-               <h5>Password</h5>
-               <input type="password" />
-               <button type="submit" className="login__signInButton ">Sign in</button>
-           </form>
-           <p>
-           By signing-in, you agree to Tebogo's Conditions of Use and Privacy Notice.
-           </p>
-           <button className="login__registerbutton">Create Account</button>
+        <h1>Sign in</h1>
+        <form>
+          <h5>E-mail</h5>
+          <input
+            type="email"
+            value={loginDetails.email}
+            placeholder="Email"
+            onChange={(e) =>
+              setLoginDetails({
+                ...loginDetails,
+                [e.target.name]: e.target.value,
+              })
+            }
+          />
+          <h5>Password</h5>
+          <input
+            type="password"
+            placeholder="Password"
+            value={loginDetails.password}
+            onChange={(e) =>
+              setLoginDetails({
+                ...loginDetails,
+                [e.target.name]: e.target.value,
+              })
+            }
+          />
+          <button
+            type="submit"
+            onClick={login}
+            className="login__signInButton "
+          >
+            Sign in
+          </button>
+        </form>
+        <p>
+          By signing-in, you agree to Tebogo's Conditions of Use and Privacy
+          Notice.
+        </p>
+        <small>New to BioWare?</small>
+        <button className="login__registerbutton">Create Account</button>
       </div>
     </div>
   );
