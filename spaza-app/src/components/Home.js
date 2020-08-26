@@ -2,7 +2,7 @@ import React from "react";
 import "./Home.css";
 import Product from "./Product";
 
-function Home() {
+function Home({history}) {
   return (
     <div className="home">
       <img
