@@ -1,14 +1,35 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import "./Login.css";
 import { Link } from "react-router-dom";
-import axios from "axios";
-import jwtDecode from "jwt-decode";
+import { login } from "../actions/auth";
+import { useHistory } from "react-router-dom";
+
 
 function Login() {
   const [loginDetails, setLoginDetails] = useState({ email: "", password: "" });
+  const dispatch = useDispatch();
 
-  const login = () => {};
+  const history = useHistory();
 
+  const routeChange = () => {
+    let path = "/login";
+    history.push(path);
+  };
+
+  const submit = (event) => {
+    event.preventDefault();
+    dispatch(login(loginDetails));
+    routeChange();
+  };
+
+  const handleChange = (event) => {
+    event.preventDefault();
+    setLoginDetails({
+      ...loginDetails,
+      [event.target.name]: event.target.value,
+    });
+  };
   return (
     <div className="login">
       <Link to="/">
@@ -20,36 +41,24 @@ function Login() {
       </Link>
       <div className="login__container">
         <h1>Sign in</h1>
-        <form>
+        <form onSubmit={(e) => submit(e)}>
           <h5>E-mail</h5>
           <input
             type="email"
+            name="email"
             value={loginDetails.email}
             placeholder="Email"
-            onChange={(e) =>
-              setLoginDetails({
-                ...loginDetails,
-                [e.target.name]: e.target.value,
-              })
-            }
+            onChange={handleChange}
           />
           <h5>Password</h5>
           <input
             type="password"
             placeholder="Password"
+            name="password"
             value={loginDetails.password}
-            onChange={(e) =>
-              setLoginDetails({
-                ...loginDetails,
-                [e.target.name]: e.target.value,
-              })
-            }
+            onChange={handleChange}
           />
-          <button
-            type="submit"
-            onClick={login}
-            className="login__signInButton "
-          >
+          <button type="submit" className="login__signInButton ">
             Sign in
           </button>
         </form>
