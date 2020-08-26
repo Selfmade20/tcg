@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./Login.css";
 import { Link } from "react-router-dom";
-import { login } from "../actions/auth";
+import { register } from "../actions/auth";
 // import { useHistory } from "react-router-dom";
 
 function Login() {
@@ -12,15 +12,10 @@ function Login() {
   });
   const dispatch = useDispatch();
 
-  //   const history = useHistory();
-
-  //   const routeChange = () => {
-  //     let path = "/login";
-  //     history.push(path);
-  //   };
-
   const submit = (event) => {
     event.preventDefault();
+    dispatch(register(registerDetails));
+    window.location.reload();
   };
 
   const handleChange = (event) => {
