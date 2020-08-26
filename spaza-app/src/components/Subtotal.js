@@ -3,9 +3,18 @@ import "./Subtotal.css";
 import { useStateValue } from "../redux/StateProvider";
 import CurrencyFormat from "react-currency-format";
 import { getBasketTotal } from "../redux/reducer";
+import { useHistory } from "react-router-dom";
 
 function Subtotal() {
   const [{ basket }] = useStateValue();
+
+  const history = useHistory();
+
+  const routeChange = () => {
+    let path = "/login";
+    history.push(path);
+  };
+
   return (
     <div className="subtotal">
       <CurrencyFormat
@@ -25,7 +34,7 @@ function Subtotal() {
         thousandSeparator={true}
         prefix={"$"}
       />
-      <button>Proceed to Checkout</button>
+      <button onClick={routeChange}>Proceed to Checkout</button>
     </div>
   );
 }
