@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import Checkout from "./components/Checkout";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import Ordered from './components/Ordered'
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
           </Route>
           <Route path="/register">
           <Register />
+          </Route>
+          <Route path="/ordered">
+          <Ordered />
           </Route>
           <Route path="/">
             <Header />
