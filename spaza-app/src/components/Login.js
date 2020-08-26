@@ -5,22 +5,21 @@ import { Link } from "react-router-dom";
 import { login } from "../actions/auth";
 import { useHistory } from "react-router-dom";
 
-
 function Login() {
   const [loginDetails, setLoginDetails] = useState({ email: "", password: "" });
   const dispatch = useDispatch();
 
   const history = useHistory();
 
-  const routeChange = () => {
-    let path = "/login";
+  const signChange = () => {
+    let path = "/register";
     history.push(path);
   };
 
   const submit = (event) => {
     event.preventDefault();
     dispatch(login(loginDetails));
-    routeChange();
+    window.location.reload();
   };
 
   const handleChange = (event) => {
@@ -67,7 +66,9 @@ function Login() {
           Notice.
         </p>
         <small>New to BioWare?</small>
-        <button className="login__registerbutton">Create Account</button>
+        <button className="login__registerbutton" onClick={signChange}>
+          Create Account
+        </button>
       </div>
     </div>
   );
