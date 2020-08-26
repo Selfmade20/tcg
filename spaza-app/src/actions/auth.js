@@ -1,17 +1,19 @@
 import axios from "axios";
-import jwtDecode from "jwt-decode";
+
+export const register = (registerDetails) => {
+  return async () => {
+    try {
+      await axios.post("http://localhost:5000/user/register", registerDetails);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
 
 export const login = (loginDetails) => {
-  return async (dispatch) => {
+  return async () => {
     try {
-      const { data } = await axios.post(
-        "http:/localhost:5000/user/login",
-        loginDetails
-      );
-      const decodedToken = jwtDecode(data.token);
-      dispatch({ type: "AUTH_SAVE_USER", payload: decodedToken });
-      dispatch({ type: "CHANGE_AUTHORIZATION", payload: true });
-      localStorage.setItem("token", data.token);
+      await axios.post("http://localhost:5000/user/login", loginDetails);
     } catch (error) {
       console.log(error);
     }
