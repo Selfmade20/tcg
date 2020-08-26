@@ -1,0 +1,23 @@
+.successful__order {
+  display: flex;
+  margin: 20px;
+  font-family: verdana;
+  font-size: 30px;
+}
+
+button {
+  background: #f0c14b;
+  margin-bottom: 10px;
+  border-radius: 2px;
+  width: 40%;
+  height: 30px;
+  border: 1px solid;
+  margin-top: 10px;
+  border-color: #a88734 #9c7e31 #846a29;
+  color: #111;
+}
+
+body {
+  background-image: url("../checkout.jpg");
+  background-size: cover;
+}
