@@ -3,6 +3,8 @@
   margin-left: auto;
   margin-right: auto;
   animation: infinite;
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
 .home__row {
