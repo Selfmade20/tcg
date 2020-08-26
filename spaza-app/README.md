@@ -9,4 +9,4 @@
 
 # Homepage
 
-- <img src="../images/langingpage.png" />
+- <img src="../images/landingpage.png" />
