@@ -3,7 +3,11 @@ const User = require("../model/User");
 
 router.post("/register", async (req, res) => {
   const user = new User({
-   const {name, surname, email, IDnumber, address} = req.body
+    name: req.body.name,
+    surname: req.body.surname,
+    email: req.body.email,
+    IDnumber: req.body.IDnumber,
+    address: req.body.address,
   });
 
   try {
