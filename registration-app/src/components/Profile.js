@@ -19,6 +19,7 @@ function Profile() {
 
   return (
     <ul>
+      {setData}
       <button onClick={getData}>Get Data</button>
     </ul>
   );
