@@ -2,6 +2,18 @@ import React from "react";
 import "./Register.css";
 
 function Registration() {
+  const [data, setData] = useState({
+    name: "",
+    surname: "",
+    email: "",
+    idNumber: "",
+    address: "",
+  });
+
+  const handleChange = (event) => {
+    event.preventDefault();
+    
+  };
   return (
     <div className="register">
       <div className="register__container">
