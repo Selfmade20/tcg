@@ -24,4 +24,13 @@ router.post("/register", async (req, res) => {
   }
 });
 
+
+router.post("/login", async (req, res) => {
+  const user = await User.findOne({ email: req.body.email });
+  if (!user) return res.status(400).send("Email is incorrect");
+
+  res.send("Logged in");
+});
+
+
 module.exports = router;
