@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const authRoute = require("./routes/auth");
+const cors = require("cors");
 
 app.use(express.json());
 
@@ -16,6 +17,7 @@ mongoose.connect(
   }
 );
 
+app.use(cors());
 app.use(authRoute);
 
 app.listen(4000, console.log("Server up and running!"));
