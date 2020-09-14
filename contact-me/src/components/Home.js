@@ -6,9 +6,10 @@ import { register } from "../actions/auth";
 function Home() {
   const [registerDetails, setRegisterDetails] = useState({
     name: "",
-    webAddress: "",
-    physicalAddress: "",
+    surname: "",
+    mobileNumber: "",
     email: "",
+    question: "",
   });
 
   const dispatch = useDispatch();
@@ -19,7 +20,6 @@ function Home() {
   };
 
   const handleChange = (event) => {
-    event.preventDefault();
     setRegisterDetails({
       ...registerDetails,
       [event.target.name]: event.target.value,
@@ -32,30 +32,32 @@ function Home() {
       <form onSubmit={(e) => submit(e)}>
         <h5>Name</h5>
         <input
-          type="name"
-          value={registerDetails.name}
+          type="text"
           placeholder="Name..."
           onChange={handleChange}
         />
-        <h5>Web-Address</h5>
+        <h5>Surname</h5>
         <input
           type="address"
-          value={registerDetails.webAddress}
-          placeholder="Web Address..."
+          placeholder="Surname..."
           onChange={handleChange}
         />
-        <h5>Physical-Address</h5>
+        <h5>Mobile-Number</h5>
         <input
-          type="address"
-          value={registerDetails.physicalAddress}
-          placeholder="Physical Address..."
+          type="cell"
+          placeholder="Mobile Number..."
           onChange={handleChange}
         />
         <h5>Email</h5>
         <input
           type="email"
-          value={registerDetails.email}
           placeholder="Email..."
+          onChange={handleChange}
+        />
+        <h5>Question?</h5>
+        <input
+          type="question"
+          placeholder="Question..."
           onChange={handleChange}
         />
         <button type="submit" className="register__button">
