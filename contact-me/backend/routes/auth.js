@@ -33,4 +33,16 @@ router.post("/registerCompany", async (req, res) => {
   }
 });
 
+router.route("/").get((req, res) => {
+  User.find()
+    .then((users) => res.json(users))
+    .catch((err) => res.status(400).json("Error:" + err));
+});
+
+router.route("/companies").get((req, res) => {
+  Company.find()
+    .then((companies) => res.json(companies))
+    .catch((err) => res.status(400).json("Error:" + err));
+});
+
 module.exports = router;
