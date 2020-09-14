@@ -9,13 +9,12 @@ router.post("/capture", async (req, res) => {
     email: req.body.email,
     question: req.body.question,
   });
+  try {
+    const savedInfo = await user.save();
+    res.send(savedInfo);
+  } catch (error) {
+    res.status(400).send(error);
+  }
 });
-
-try {
-  const savedInfo = await user.save();
-  res.send(savedInfo);
-} catch (error) {
-  res.status(400).send(error);
-}
 
 module.exports = router;
