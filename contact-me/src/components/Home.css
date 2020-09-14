@@ -1,0 +1,11 @@
+.header{
+    font-size: 60px;
+    text-align: center;
+    color: white;
+    text-decoration: underline;
+    margin-bottom: 100px;
+}
+
+.container {
+    margin-left: 10px;
+}
