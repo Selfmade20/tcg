@@ -21,6 +21,11 @@ const userSchema = new mongoose.Schema({
     required: true,
     min: 6,
   },
+  question: {
+    type: String,
+    required: true,
+    min: 6,
+  },
 });
 
 module.exports = mongoose.model("User", userSchema);
