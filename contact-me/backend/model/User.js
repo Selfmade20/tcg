@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema({
     min: 3,
   },
   mobileNumber: {
-    type: Number,
+    type: String,
     required: true,
     min: 10,
   },
