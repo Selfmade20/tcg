@@ -1,8 +1,8 @@
 .container {
   color: black;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana;
   display: flex;
-  font-size: 20px;
+  font-size: 21px;
   flex-direction: row;
 }
 
