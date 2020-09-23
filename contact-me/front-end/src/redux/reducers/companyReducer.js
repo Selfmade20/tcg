@@ -1,4 +1,5 @@
 const initialState = {
+  company: null,
   companies: [],
 };
 
