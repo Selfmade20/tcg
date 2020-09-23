@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const Company = require("../model/company");
 
-router.post("/insert", async (req, res) => {
+router.post("/register", async (req, res) => {
   const company = new Company({
     name: req.body.name,
     websiteAddress: req.body.websiteAddress,
