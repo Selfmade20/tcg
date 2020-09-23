@@ -1,0 +1,13 @@
+.container {
+  color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  font-size: 20px;
+  flex-direction: row;
+}
+
+.grid-1 {
+    flex:2;
+    order: 2;
+    margin-left: 12rem;
+}
