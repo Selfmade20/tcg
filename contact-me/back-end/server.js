@@ -13,8 +13,11 @@ mongoose.connect(
   }
 );
 
-app.use(express());
+app.use(express.json());
 app.use(cors());
+
+const adminRouter = require("./routes/admin");
+app.use("/account", adminRouter);
 
 const port = process.env.PORT;
 app.listen(port, console.log(`Server successfully running or port: ${port}`));
