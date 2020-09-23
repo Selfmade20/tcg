@@ -19,5 +19,8 @@ app.use(cors());
 const adminRouter = require("./routes/admin");
 app.use("/account", adminRouter);
 
+const companyRouter = require("./routes/company");
+app.use("/company", companyRouter);
+
 const port = process.env.PORT;
 app.listen(port, console.log(`Server successfully running or port: ${port}`));
