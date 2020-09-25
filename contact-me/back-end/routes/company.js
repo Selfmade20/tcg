@@ -22,8 +22,9 @@ router.get("/", async (req, res) => {
   try {
     const company = await Company.find();
     res.send(company);
-  } catch (error) {}
-  res.send(error);
+  } catch (error) {
+    res.send(error);
+  }
 });
 
 module.exports = router;
