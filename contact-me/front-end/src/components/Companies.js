@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Companies.css";
+import { Button } from "@material-ui/core";
 
 function Companies() {
   const [companies, setCompanies] = useState([]);
@@ -27,7 +29,11 @@ function Companies() {
             <h3> Email: {company.emailAddress}</h3>{" "}
             <h3>Website Address: {company.websiteAddress}</h3>{" "}
             <h3>Phone Number: {company.phoneNumber}</h3>
-            <button>Select</button>
+            <Link to="/customer" style={{ textDecoration: "none" }}>
+              <Button variant="contained" color="primary">
+                Select
+              </Button>
+            </Link>
           </li>
         ))}
       </ul>
