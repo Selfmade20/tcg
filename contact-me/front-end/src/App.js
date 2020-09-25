@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Login from "./components/Login";
 import Companies from "./components/Companies";
 import Register from "./components/Register";
+import Customer from "./components/Customer";
 function App() {
   return (
     <Router>
@@ -21,6 +22,10 @@ function App() {
             <Navbar />
             <Companies />
           </Route>
+          <Router path="/customer">
+            <Navbar />
+            <Customer />
+          </Router>
         </Switch>
       </div>
     </Router>
