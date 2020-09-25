@@ -1,37 +1,100 @@
 import React, { useState } from "react";
 import "./Login.css";
-import { signin } from "../redux/actions/admin";
+import { submitInfo } from "../redux/actions/customer";
 import { useDispatch } from "react-redux";
 
 function Customer() {
-  //   const [loginDetails, setLoginDetails] = useState({
-  //     email: "",
-  //     password: "",
-  //   });
+  const [customerDetails, setCustomerDetails] = useState({
+    name: "",
+    surname: "",
+    mobileNumber: "",
+    email: "",
+    question: "",
+  });
 
-  //   const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  //   const submit = (e) => {
-  //     e.preventDefault();
-  //     dispatch(signin(loginDetails));
-  //   };
+  const submit = (e) => {
+    e.preventDefault();
+    dispatch(submitInfo(customerDetails));
+  };
 
   return (
     <div className="login">
       <div className="login__container">
         <h1>Customer Form</h1>
-        <form>
+        <form onSubmit={(e) => submit(e)}>
           <h5>Name</h5>
-          <input type="name" name="name" placeholder="Name" />
+          <input
+            type="name"
+            name="name"
+            placeholder="Name"
+            value={customerDetails.name}
+            onChange={(e) =>
+              setCustomerDetails({
+                ...customerDetails,
+                [e.target.name]: e.target.value,
+              })
+            }
+          />
           <h5>Surname</h5>
-          <input type="surname" placeholder="Surname" name="surname" />
+          <input
+            type="surname"
+            placeholder="Surname"
+            name="surname"
+            value={customerDetails.surname}
+            onChange={(e) =>
+              setCustomerDetails({
+                ...customerDetails,
+                [e.target.name]: e.target.value,
+              })
+            }
+          />
           <h5>Mobile Number</h5>
-          <input type="number" placeholder="Mobile Number" name="number" />
+          <input
+            type="number"
+            placeholder="Mobile Number"
+            name="mobileNumber"
+            value={customerDetails.mobileNumber}
+            onChange={(e) =>
+              setCustomerDetails({
+                ...customerDetails,
+                [e.target.name]: e.target.value,
+              })
+            }
+          />
           <h5>Email</h5>
-          <input type="email" placeholder="Email" name="email" />
+          <input
+            type="email"
+            placeholder="Email"
+            name="email"
+            value={customerDetails.email}
+            onChange={(e) =>
+              setCustomerDetails({
+                ...customerDetails,
+                [e.target.name]: e.target.value,
+              })
+            }
+          />
           <h5>Question</h5>
-          <textarea name="paragraph_text" cols="35" rows="10" placeholder="Question?"></textarea>
-          <button type="submit" className="login__signInButton ">
+          <textarea
+            name="question"
+            cols="35"
+            rows="10"
+            placeholder="Question?"
+            value={customerDetails.question}
+            onChange={(e) =>
+              setCustomerDetails({
+                ...customerDetails,
+                [e.target.name]: e.target.value,
+              })
+            }
+          />
+          <button
+            type="submit"
+            onClick={submit}
+            className="login__signInButton "
+          >
             Submit
           </button>
         </form>
